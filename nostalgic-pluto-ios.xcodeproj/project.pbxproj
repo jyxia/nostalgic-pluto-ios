@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCA6F7381B5B50A90023686E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F7371B5B50A90023686E /* AppDelegate.swift */; };
+		FCA6F73B1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F7391B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld */; };
+		FCA6F73D1B5B50A90023686E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F73C1B5B50A90023686E /* ViewController.swift */; };
+		FCA6F7401B5B50A90023686E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA6F73E1B5B50A90023686E /* Main.storyboard */; };
+		FCA6F7421B5B50A90023686E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA6F7411B5B50A90023686E /* Images.xcassets */; };
+		FCA6F7451B5B50A90023686E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA6F7431B5B50A90023686E /* LaunchScreen.xib */; };
+		FCA6F7511B5B50A90023686E /* nostalgic_pluto_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F7501B5B50A90023686E /* nostalgic_pluto_iosTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCA6F74B1B5B50A90023686E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA6F72A1B5B50A90023686E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA6F7311B5B50A90023686E;
+			remoteInfo = "nostalgic-pluto-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FCA6F7321B5B50A90023686E /* nostalgic-pluto-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nostalgic-pluto-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA6F7361B5B50A90023686E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA6F7371B5B50A90023686E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCA6F73A1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nostalgic_pluto_ios.xcdatamodel; sourceTree = "<group>"; };
+		FCA6F73C1B5B50A90023686E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCA6F73F1B5B50A90023686E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCA6F7411B5B50A90023686E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCA6F7441B5B50A90023686E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FCA6F74A1B5B50A90023686E /* nostalgic-pluto-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nostalgic-pluto-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA6F74F1B5B50A90023686E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA6F7501B5B50A90023686E /* nostalgic_pluto_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nostalgic_pluto_iosTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCA6F72F1B5B50A90023686E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA6F7471B5B50A90023686E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCA6F7291B5B50A90023686E = {
+			isa = PBXGroup;
+			children = (
+				FCA6F7341B5B50A90023686E /* nostalgic-pluto-ios */,
+				FCA6F74D1B5B50A90023686E /* nostalgic-pluto-iosTests */,
+				FCA6F7331B5B50A90023686E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCA6F7331B5B50A90023686E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCA6F7321B5B50A90023686E /* nostalgic-pluto-ios.app */,
+				FCA6F74A1B5B50A90023686E /* nostalgic-pluto-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCA6F7341B5B50A90023686E /* nostalgic-pluto-ios */ = {
+			isa = PBXGroup;
+			children = (
+				FCA6F7371B5B50A90023686E /* AppDelegate.swift */,
+				FCA6F73C1B5B50A90023686E /* ViewController.swift */,
+				FCA6F73E1B5B50A90023686E /* Main.storyboard */,
+				FCA6F7411B5B50A90023686E /* Images.xcassets */,
+				FCA6F7431B5B50A90023686E /* LaunchScreen.xib */,
+				FCA6F7391B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld */,
+				FCA6F7351B5B50A90023686E /* Supporting Files */,
+			);
+			path = "nostalgic-pluto-ios";
+			sourceTree = "<group>";
+		};
+		FCA6F7351B5B50A90023686E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA6F7361B5B50A90023686E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCA6F74D1B5B50A90023686E /* nostalgic-pluto-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCA6F7501B5B50A90023686E /* nostalgic_pluto_iosTests.swift */,
+				FCA6F74E1B5B50A90023686E /* Supporting Files */,
+			);
+			path = "nostalgic-pluto-iosTests";
+			sourceTree = "<group>";
+		};
+		FCA6F74E1B5B50A90023686E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA6F74F1B5B50A90023686E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCA6F7311B5B50A90023686E /* nostalgic-pluto-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA6F7541B5B50A90023686E /* Build configuration list for PBXNativeTarget "nostalgic-pluto-ios" */;
+			buildPhases = (
+				FCA6F72E1B5B50A90023686E /* Sources */,
+				FCA6F72F1B5B50A90023686E /* Frameworks */,
+				FCA6F7301B5B50A90023686E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "nostalgic-pluto-ios";
+			productName = "nostalgic-pluto-ios";
+			productReference = FCA6F7321B5B50A90023686E /* nostalgic-pluto-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCA6F7491B5B50A90023686E /* nostalgic-pluto-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA6F7571B5B50A90023686E /* Build configuration list for PBXNativeTarget "nostalgic-pluto-iosTests" */;
+			buildPhases = (
+				FCA6F7461B5B50A90023686E /* Sources */,
+				FCA6F7471B5B50A90023686E /* Frameworks */,
+				FCA6F7481B5B50A90023686E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA6F74C1B5B50A90023686E /* PBXTargetDependency */,
+			);
+			name = "nostalgic-pluto-iosTests";
+			productName = "nostalgic-pluto-iosTests";
+			productReference = FCA6F74A1B5B50A90023686E /* nostalgic-pluto-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCA6F72A1B5B50A90023686E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Jinyue Xia";
+				TargetAttributes = {
+					FCA6F7311B5B50A90023686E = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					FCA6F7491B5B50A90023686E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = FCA6F7311B5B50A90023686E;
+					};
+				};
+			};
+			buildConfigurationList = FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "nostalgic-pluto-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCA6F7291B5B50A90023686E;
+			productRefGroup = FCA6F7331B5B50A90023686E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCA6F7311B5B50A90023686E /* nostalgic-pluto-ios */,
+				FCA6F7491B5B50A90023686E /* nostalgic-pluto-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCA6F7301B5B50A90023686E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA6F7401B5B50A90023686E /* Main.storyboard in Resources */,
+				FCA6F7451B5B50A90023686E /* LaunchScreen.xib in Resources */,
+				FCA6F7421B5B50A90023686E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA6F7481B5B50A90023686E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCA6F72E1B5B50A90023686E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA6F73D1B5B50A90023686E /* ViewController.swift in Sources */,
+				FCA6F73B1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld in Sources */,
+				FCA6F7381B5B50A90023686E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA6F7461B5B50A90023686E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA6F7511B5B50A90023686E /* nostalgic_pluto_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCA6F74C1B5B50A90023686E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA6F7311B5B50A90023686E /* nostalgic-pluto-ios */;
+			targetProxy = FCA6F74B1B5B50A90023686E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCA6F73E1B5B50A90023686E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA6F73F1B5B50A90023686E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCA6F7431B5B50A90023686E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA6F7441B5B50A90023686E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCA6F7521B5B50A90023686E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCA6F7531B5B50A90023686E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCA6F7551B5B50A90023686E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "nostalgic-pluto-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FCA6F7561B5B50A90023686E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "nostalgic-pluto-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FCA6F7581B5B50A90023686E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "nostalgic-pluto-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nostalgic-pluto-ios.app/nostalgic-pluto-ios";
+			};
+			name = Debug;
+		};
+		FCA6F7591B5B50A90023686E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "nostalgic-pluto-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nostalgic-pluto-ios.app/nostalgic-pluto-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "nostalgic-pluto-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA6F7521B5B50A90023686E /* Debug */,
+				FCA6F7531B5B50A90023686E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA6F7541B5B50A90023686E /* Build configuration list for PBXNativeTarget "nostalgic-pluto-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA6F7551B5B50A90023686E /* Debug */,
+				FCA6F7561B5B50A90023686E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCA6F7571B5B50A90023686E /* Build configuration list for PBXNativeTarget "nostalgic-pluto-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA6F7581B5B50A90023686E /* Debug */,
+				FCA6F7591B5B50A90023686E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCA6F7391B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCA6F73A1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodel */,
+			);
+			currentVersion = FCA6F73A1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodel */;
+			path = nostalgic_pluto_ios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FCA6F72A1B5B50A90023686E /* Project object */;
+}
