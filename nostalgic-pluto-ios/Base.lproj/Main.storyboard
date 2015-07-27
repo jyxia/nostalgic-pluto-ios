@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZUD-JI-Q0B">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="HomeViewController" customModule="nostalgic_pluto_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,133 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-7T-Z1v">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yNI-7T-Z1v" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Hr7-IA-qyH"/>
+                            <constraint firstAttribute="trailing" secondItem="yNI-7T-Z1v" secondAttribute="trailing" id="PJb-Pm-gRj"/>
+                            <constraint firstItem="yNI-7T-Z1v" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="aCi-df-dfX"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="yNI-7T-Z1v" secondAttribute="bottom" id="aVT-MH-TNO"/>
+                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5Uf-QS-HG4"/>
+                        <barButtonItem systemItem="camera" id="evw-Af-z28">
+                            <connections>
+                                <action selector="didPressTakePhoto:" destination="vXZ-lx-hvc" id="vhH-4U-WYs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="usy-Ha-Kn5"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Camera" id="Tq6-2x-zpL"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="capturePreview" destination="yNI-7T-Z1v" id="SFZ-mz-oJz"/>
+                        <segue destination="Pub-Fd-hEP" kind="show" identifier="ShowImageInfo" id="4Aj-jJ-fJK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1237" y="254"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="Lpa-fO-k8S">
+            <objects>
+                <viewController id="Pub-Fd-hEP" customClass="ImageViewController" customModule="nostalgic_pluto_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XPz-Q6-aIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="G7k-Aw-2UQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AhX-lj-PM7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQ9-C9-HW9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="406"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="478" id="kg0-Mu-xoa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kg0-Mu-xoa"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="rLm-UN-XiQ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2.5"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="waiting for upload info" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-Wy-Jcu">
+                                <rect key="frame" x="16" y="485" width="568" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yQ9-C9-HW9" firstAttribute="top" secondItem="XPz-Q6-aIb" secondAttribute="bottom" id="6Fp-Gb-3Dc"/>
+                            <constraint firstItem="yQ9-C9-HW9" firstAttribute="top" secondItem="XPz-Q6-aIb" secondAttribute="bottom" id="8f1-8f-vW0"/>
+                            <constraint firstItem="Y8W-Wy-Jcu" firstAttribute="centerX" secondItem="rLm-UN-XiQ" secondAttribute="centerX" id="Gs1-45-hZs"/>
+                            <constraint firstItem="rLm-UN-XiQ" firstAttribute="top" secondItem="yQ9-C9-HW9" secondAttribute="top" id="JQ5-uE-5zq"/>
+                            <constraint firstItem="yQ9-C9-HW9" firstAttribute="leading" secondItem="AhX-lj-PM7" secondAttribute="leading" id="O5I-L9-u2N"/>
+                            <constraint firstItem="G7k-Aw-2UQ" firstAttribute="top" secondItem="Y8W-Wy-Jcu" secondAttribute="bottom" constant="34" id="b4g-cZ-JZg"/>
+                            <constraint firstItem="rLm-UN-XiQ" firstAttribute="leading" secondItem="yQ9-C9-HW9" secondAttribute="leading" id="eDO-rq-MqE"/>
+                            <constraint firstAttribute="trailing" secondItem="rLm-UN-XiQ" secondAttribute="trailing" id="fNg-3F-Hyw"/>
+                            <constraint firstItem="Y8W-Wy-Jcu" firstAttribute="top" secondItem="yQ9-C9-HW9" secondAttribute="bottom" constant="15" id="j2P-Vt-Xzc"/>
+                            <constraint firstItem="G7k-Aw-2UQ" firstAttribute="top" secondItem="yQ9-C9-HW9" secondAttribute="bottom" constant="130.5" id="n2g-15-eDq"/>
+                            <constraint firstItem="Y8W-Wy-Jcu" firstAttribute="leading" secondItem="AhX-lj-PM7" secondAttribute="leadingMargin" id="nAp-mB-rpD"/>
+                            <constraint firstItem="rLm-UN-XiQ" firstAttribute="trailing" secondItem="yQ9-C9-HW9" secondAttribute="trailing" id="qCD-Lb-dBQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8f1-8f-vW0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Preview" id="zu5-w7-qnF">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="XDQ-fX-yza">
+                            <connections>
+                                <action selector="didPressSend:" destination="Pub-Fd-hEP" id="M6D-CB-peD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="yQ9-C9-HW9" id="jfP-7Q-p1p"/>
+                        <outlet property="metaLabel" destination="Y8W-Wy-Jcu" id="IsI-GV-Q8p"/>
+                        <outlet property="uploadProgressView" destination="rLm-UN-XiQ" id="F97-FD-UAm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usA-ET-FGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2220" y="407"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cjg-r6-7ez">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ZUD-JI-Q0B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Um9-mA-nbd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ing-qH-hQL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="mWe-9g-pa8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SV-SJ-ZFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="-426"/>
         </scene>
     </scenes>
 </document>
