@@ -1,6 +1,6 @@
 //
 //  APIAdapter.swift
-//  naturenet
+//  nostalgic-pluto-ios
 //
 //  Created by Jinyue Xia on 1/21/15.
 //  Copyright (c) 2015 Jinyue Xia. All rights reserved.

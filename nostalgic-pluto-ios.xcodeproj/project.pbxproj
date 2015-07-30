@@ -19,6 +19,8 @@
 		FCC96AF91B65F0030097DF67 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF61B65F0030097DF67 /* API.swift */; };
 		FCC96AFA1B65F0030097DF67 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF71B65F0030097DF67 /* APIService.swift */; };
 		FCC96AFB1B65F0030097DF67 /* APIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF81B65F0030097DF67 /* APIAdapter.swift */; };
+		FCC96AFD1B6990E20097DF67 /* ImagePreviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AFC1B6990E20097DF67 /* ImagePreviewTableViewController.swift */; };
+		FCC96AFF1B69CB4E0097DF67 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AFE1B69CB4E0097DF67 /* FullImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		FCC96AF61B65F0030097DF67 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC96AF71B65F0030097DF67 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FCC96AF81B65F0030097DF67 /* APIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAdapter.swift; sourceTree = "<group>"; };
+		FCC96AFC1B6990E20097DF67 /* ImagePreviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewTableViewController.swift; sourceTree = "<group>"; };
+		FCC96AFE1B69CB4E0097DF67 /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			children = (
 				FCA6F73C1B5B50A90023686E /* HomeViewController.swift */,
 				FCA6F75B1B5C30E50023686E /* ImageViewController.swift */,
+				FCC96AFC1B6990E20097DF67 /* ImagePreviewTableViewController.swift */,
+				FCC96AFE1B69CB4E0097DF67 /* FullImageViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 			files = (
 				FCA6F73D1B5B50A90023686E /* HomeViewController.swift in Sources */,
 				FCA6F73B1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld in Sources */,
+				FCC96AFF1B69CB4E0097DF67 /* FullImageViewController.swift in Sources */,
 				FCC96AFB1B65F0030097DF67 /* APIAdapter.swift in Sources */,
 				FCA6F75C1B5C30E50023686E /* ImageViewController.swift in Sources */,
+				FCC96AFD1B6990E20097DF67 /* ImagePreviewTableViewController.swift in Sources */,
 				FCA6F7381B5B50A90023686E /* AppDelegate.swift in Sources */,
 				FCC96AFA1B65F0030097DF67 /* APIService.swift in Sources */,
 				FCC96AF91B65F0030097DF67 /* API.swift in Sources */,

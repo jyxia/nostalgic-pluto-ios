@@ -1,45 +1,65 @@
 //
-//  ImageViewController.swift
+//  ImagePreviewTableViewController.swift
 //  nostalgic-pluto-ios
 //
-//  Created by Jinyue Xia on 7/19/15.
+//  Created by Jinyue Xia on 7/29/15.
 //  Copyright (c) 2015 Jinyue Xia. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
-class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerProtocol {
-
+class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate, APIControllerProtocol {
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var uploadProgressView: UIProgressView!
-    @IBOutlet weak var metaLabel: UILabel!
     @IBOutlet weak var descTextView: UITextView!
-
+    
     var cloudinary:CLCloudinary = CLCloudinary()
     
     var image: UIImage!
     var userLat: CLLocationDegrees?
     var userLon: CLLocationDegrees?
-    var time : NSDate?
-
+    
     var imageInfo: ImageInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.image = image
         self.setupTextview()
+        self.imageView.image = image
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.descTextView.resignFirstResponder()
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            self.performSegueWithIdentifier("FullImageViewSeg", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FullImageViewSeg" {
+            let destinationViewer = segue.destinationViewController as! FullImageViewController
+            destinationViewer.fullImage = self.image
+        }
     }
     
     @IBAction func didPressSend(sender: AnyObject) {
@@ -49,26 +69,25 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
             self.navigationItem.rightBarButtonItem?.enabled = false
         }
     }
-
+    
     //----------------------------------------------------------------------------------------------
     // cloudinary upload
     //----------------------------------------------------------------------------------------------
     func uploadToCloudinary() {
         let forUpload = UIImageJPEGRepresentation(image, 0.8) as NSData
-
+       
         let uploader = CLUploader(cloudinary, delegate: self)
         uploader.upload(forUpload, options: nil, withCompletion:onCloudinaryCompletion, andProgress:onCloudinaryProgress)
     }
     
     func onCloudinaryCompletion(successResult:[NSObject : AnyObject]!, errorResult:String!, code:Int, idContext:AnyObject!) {
-        println(successResult)
+        // println(successResult)
         let publicId = successResult["public_id"] as! String
         let time = successResult["created_at"] as! String
         println("now cloudinary uploaded, public id is: \(publicId), ready for uploading media")
         self.uploadProgressView.setProgress(0, animated: false)
         let url = successResult["url"] as? String
         self.prepareImageInfo(publicId, time: time)
-        // self.metaLabel.text = "name: \(publicId) time: \(time)"
     }
     
     func onCloudinaryProgress(bytesWritten:Int, totalBytesWritten:Int, totalBytesExpectedToWrite:Int, idContext:AnyObject!) {
@@ -85,26 +104,16 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
         if self.userLat != nil &&  self.userLon != nil {
             loc = [Double(self.userLon!), Double(self.userLat!)]
         }
-        self.imageInfo = ImageInfo(name: publicId, loc: loc, time: time)
+        var imgDescription = ""
+        if var imageDescription = self.descTextView.text {
+            imgDescription = imageDescription
+        }
+        self.imageInfo = ImageInfo(name: publicId, loc: loc, time: time, imgDescription: imgDescription)
         let requestBody = self.JSONStringify(self.imageInfo!.toJSON(), prettyPrinted: false)
         var apiService = APIService()
         apiService.delegate = self
         let apiURL = APIAdapter.api.newImageAPI()
         apiService.post(apiURL, httpBody: requestBody)
-    }
-
-    private func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> NSData? {
-        var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
-        if NSJSONSerialization.isValidJSONObject(value) {
-            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
-                if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    // return string as String
-                    println("post body is: \(string as String)")
-                }
-                return data
-            }
-        }
-        return nil
     }
     
     
@@ -115,6 +124,7 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
         var name: String
         var loc: [Double]?
         var time : String
+        var imgDescription: String
         
         func toJSON() -> [String : AnyObject] {
             var location:[Double]
@@ -132,7 +142,8 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
             return [
                 "name": self.name,
                 "time": self.time,
-                "loc": locArray
+                "loc": locArray,
+                "description": self.imgDescription
             ]
         }
     }
@@ -141,7 +152,6 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
     func didReceiveAPIResults(response: NSDictionary) {
         let data = self.JSONStringify(self.imageInfo!.toJSON(), prettyPrinted: false)
         if let string = NSString(data: data!, encoding: NSUTF8StringEncoding) {
-            self.metaLabel.text = string as String
         }
         println(response)
         self.navigationItem.title = "Preview"
@@ -149,15 +159,25 @@ class ImageViewController: UIViewController, CLUploaderDelegate, APIControllerPr
         self.navigationItem.rightBarButtonItem?.style = UIBarButtonItemStyle.Plain
     }
     
-    // initialize textview, add boarders to the textview
+    private func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> NSData? {
+        var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
+        if NSJSONSerialization.isValidJSONObject(value) {
+            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
+                if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                    // return string as String
+                    // println("post body is: \(string as String)")
+                }
+                return data
+            }
+        }
+        return nil
+    }
+    
     private func setupTextview() {
         descTextView.layer.cornerRadius = 5
         descTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         descTextView.layer.borderWidth = 1
-//        if designIdeaSavedInput != nil {
-//            ideaTextView.text = designIdeaSavedInput
-//            self.navigationItem.rightBarButtonItem?.enabled = true
-//        }
     }
+
 
 }

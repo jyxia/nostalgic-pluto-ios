@@ -1,6 +1,6 @@
 //
 //  APIService.swift
-//  naturenet
+//  nostalgic-pluto-ios
 //
 //  Created by Jinyue Xia on 1/3/15.
 //  Copyright (c) 2015 Jinyue Xia. All rights reserved.
@@ -42,11 +42,14 @@ class APIService {
         task.resume()
     }
     
-    func post(url: String, httpBody: String) {
+    func post(url: String, httpBody: NSData?) {
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
-        request.HTTPBody = httpBody.dataUsingEncoding(NSUTF8StringEncoding)
+//        request.HTTPBody = httpBody.dataUsingEncoding(NSUTF8StringEncoding)
+        if let body = httpBody {
+            request.HTTPBody = body
+        }
         var err: NSError?
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -66,8 +69,8 @@ class APIService {
             }
             else {
                 if let parseJSON = json {
+                    self.delegate?.didReceiveAPIResults(parseJSON)
                     var success = parseJSON["status_code"] as? Int
-                    // println("Succes: \(success)")
                 }
                 else {
                     let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)

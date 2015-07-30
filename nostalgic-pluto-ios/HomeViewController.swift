@@ -28,7 +28,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initLocationManager()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -40,6 +39,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // before the view appears, make sure every time, gets accurate data
+        initLocationManager()
+
         let devices = AVCaptureDevice.devices()
         
         // Loop through all the capture devices on this phone
@@ -123,16 +126,18 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     
                     var image = UIImage(CGImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.Right)
                     self.newImage = image
-                    self.performSegueWithIdentifier("ShowImageInfo", sender: self)
+                    self.performSegueWithIdentifier("PreviewImageSeg", sender: self)
                 }
             })
         }
     }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+      
         if let device = captureDevice {
             device.lockForConfiguration(nil)
             device.focusMode = AVCaptureFocusMode.Locked
+            // device.focusPointOfInterest = anyTouch.locationInView(self.capturePreview)
             device.unlockForConfiguration()
         }
         var anyTouch = touches.first as! UITouch
@@ -148,22 +153,22 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func touchPercent(touch : UITouch) -> CGPoint {
         // Get the dimensions of the screen in points
-        // let screenSize = UIScreen.mainScreen().bounds.size
-        let screenSize = capturePreview.bounds.size
+        let screenSize = UIScreen.mainScreen().bounds.size
+        // let screenSize = capturePreview.bounds.size
         // Create an empty CGPoint object set to 0, 0
         var touchPer = CGPointZero
         
         // Set the x and y values to be the value of the tapped position, divided by the width/height of the screen
-        touchPer.x = touch.locationInView(self.capturePreview).x / screenSize.width
-        touchPer.y = touch.locationInView(self.capturePreview).y / screenSize.height
+        touchPer.x = touch.locationInView(self.view).x / screenSize.width
+        touchPer.y = touch.locationInView(self.view).y / screenSize.height
         
         // Return the populated CGPoint
         return touchPer
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowImageInfo" {
-            let destinationVC = segue.destinationViewController as! ImageViewController
+        if segue.identifier == "PreviewImageSeg" {
+            let destinationVC = segue.destinationViewController as! ImagePreviewTableViewController
             destinationVC.image = newImage
             destinationVC.userLat = self.userLat
             destinationVC.userLon = self.userLon
