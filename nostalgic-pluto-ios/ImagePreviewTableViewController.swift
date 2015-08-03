@@ -9,14 +9,16 @@
 import UIKit
 import CoreLocation
 
-class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate, APIControllerProtocol {
+class ImagePreviewTableViewController: UITableViewController, UIPickerViewDelegate, CLUploaderDelegate, APIControllerProtocol {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
     @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var levelPickerView: UIPickerView!
     
     var cloudinary:CLCloudinary = CLCloudinary()
-    
+    let pickerData = ["Critical", "Poor", "OK"]
+
     var image: UIImage!
     var userLat: CLLocationDegrees?
     var userLon: CLLocationDegrees?
@@ -41,7 +43,7 @@ class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,7 +77,7 @@ class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate
     //----------------------------------------------------------------------------------------------
     func uploadToCloudinary() {
         let forUpload = UIImageJPEGRepresentation(image, 0.8) as NSData
-       
+
         let uploader = CLUploader(cloudinary, delegate: self)
         uploader.upload(forUpload, options: nil, withCompletion:onCloudinaryCompletion, andProgress:onCloudinaryProgress)
     }
@@ -116,7 +118,6 @@ class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate
         apiService.post(apiURL, httpBody: requestBody)
     }
     
-    
     //----------------------------------------------------------------------------------------------
     // Struct for ImageInfo
     //----------------------------------------------------------------------------------------------
@@ -148,6 +149,40 @@ class ImagePreviewTableViewController: UITableViewController, CLUploaderDelegate
         }
     }
     
+    //----------------------------------------------------------------------------------------------------------------------
+    // pickerView
+    //----------------------------------------------------------------------------------------------------------------------
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+        let frame = pickerView.bounds
+        let pickerLabel = UILabel(frame: CGRectInset(frame, 0, 0))
+        pickerLabel.textAlignment = .Center
+        let titleData = pickerData[row]
+        pickerLabel.text = titleData
+        pickerLabel.font = UIFont.systemFontOfSize(18)
+        if row == 0 {
+            pickerLabel.textColor = UIColor.redColor()
+        } else if row == 1 {
+            pickerLabel.textColor = UIColor.orangeColor()
+        } else if row == 2 {
+            pickerLabel.textColor = UIColor.greenColor()
+        }
+        
+        return pickerLabel
+    }
+
     // implement APIControllerProtocal
     func didReceiveAPIResults(response: NSDictionary) {
         let data = self.JSONStringify(self.imageInfo!.toJSON(), prettyPrinted: false)

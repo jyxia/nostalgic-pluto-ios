@@ -15,7 +15,6 @@
 		FCA6F7421B5B50A90023686E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA6F7411B5B50A90023686E /* Images.xcassets */; };
 		FCA6F7451B5B50A90023686E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA6F7431B5B50A90023686E /* LaunchScreen.xib */; };
 		FCA6F7511B5B50A90023686E /* nostalgic_pluto_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F7501B5B50A90023686E /* nostalgic_pluto_iosTests.swift */; };
-		FCA6F75C1B5C30E50023686E /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F75B1B5C30E50023686E /* ImageViewController.swift */; };
 		FCC96AF91B65F0030097DF67 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF61B65F0030097DF67 /* API.swift */; };
 		FCC96AFA1B65F0030097DF67 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF71B65F0030097DF67 /* APIService.swift */; };
 		FCC96AFB1B65F0030097DF67 /* APIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC96AF81B65F0030097DF67 /* APIAdapter.swift */; };
@@ -52,7 +51,6 @@
 		FCA6F74A1B5B50A90023686E /* nostalgic-pluto-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nostalgic-pluto-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA6F74F1B5B50A90023686E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA6F7501B5B50A90023686E /* nostalgic_pluto_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nostalgic_pluto_iosTests.swift; sourceTree = "<group>"; };
-		FCA6F75B1B5C30E50023686E /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		FCC96AF61B65F0030097DF67 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC96AF71B65F0030097DF67 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FCC96AF81B65F0030097DF67 /* APIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAdapter.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				FCA6F73C1B5B50A90023686E /* HomeViewController.swift */,
-				FCA6F75B1B5C30E50023686E /* ImageViewController.swift */,
 				FCC96AFC1B6990E20097DF67 /* ImagePreviewTableViewController.swift */,
 				FCC96AFE1B69CB4E0097DF67 /* FullImageViewController.swift */,
 			);
@@ -229,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "nostalgic-pluto-ios" */;
+			buildConfigurationList = FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "DamageView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -277,7 +274,6 @@
 				FCA6F73B1B5B50A90023686E /* nostalgic_pluto_ios.xcdatamodeld in Sources */,
 				FCC96AFF1B69CB4E0097DF67 /* FullImageViewController.swift in Sources */,
 				FCC96AFB1B65F0030097DF67 /* APIAdapter.swift in Sources */,
-				FCA6F75C1B5C30E50023686E /* ImageViewController.swift in Sources */,
 				FCC96AFD1B6990E20097DF67 /* ImagePreviewTableViewController.swift in Sources */,
 				FCA6F7381B5B50A90023686E /* AppDelegate.swift in Sources */,
 				FCC96AFA1B65F0030097DF67 /* APIService.swift in Sources */,
@@ -476,7 +472,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "nostalgic-pluto-ios" */ = {
+		FCA6F72D1B5B50A90023686E /* Build configuration list for PBXProject "DamageView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCA6F7521B5B50A90023686E /* Debug */,

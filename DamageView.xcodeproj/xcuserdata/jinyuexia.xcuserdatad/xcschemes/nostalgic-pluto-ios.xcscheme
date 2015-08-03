@@ -17,7 +17,7 @@
                BlueprintIdentifier = "FCA6F7311B5B50A90023686E"
                BuildableName = "nostalgic-pluto-ios.app"
                BlueprintName = "nostalgic-pluto-ios"
-               ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+               ReferencedContainer = "container:DamageView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "FCA6F7491B5B50A90023686E"
                BuildableName = "nostalgic-pluto-iosTests.xctest"
                BlueprintName = "nostalgic-pluto-iosTests"
-               ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+               ReferencedContainer = "container:DamageView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "FCA6F7491B5B50A90023686E"
                BuildableName = "nostalgic-pluto-iosTests.xctest"
                BlueprintName = "nostalgic-pluto-iosTests"
-               ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+               ReferencedContainer = "container:DamageView.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "FCA6F7311B5B50A90023686E"
             BuildableName = "nostalgic-pluto-ios.app"
             BlueprintName = "nostalgic-pluto-ios"
-            ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+            ReferencedContainer = "container:DamageView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -79,7 +79,7 @@
             BlueprintIdentifier = "FCA6F7311B5B50A90023686E"
             BuildableName = "nostalgic-pluto-ios.app"
             BlueprintName = "nostalgic-pluto-ios"
-            ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+            ReferencedContainer = "container:DamageView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,7 +98,7 @@
             BlueprintIdentifier = "FCA6F7311B5B50A90023686E"
             BuildableName = "nostalgic-pluto-ios.app"
             BlueprintName = "nostalgic-pluto-ios"
-            ReferencedContainer = "container:nostalgic-pluto-ios.xcodeproj">
+            ReferencedContainer = "container:DamageView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
